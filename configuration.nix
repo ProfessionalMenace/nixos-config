@@ -45,7 +45,9 @@
     description = "REDACTED";
     extraGroups = [ "networkmanager" "wheel"];
     packages = with pkgs; [
+      aseprite
       discord
+      github-desktop
       keepassxc
       krita
       qbittorrent
