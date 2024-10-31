@@ -74,6 +74,7 @@
   environment.systemPackages = with pkgs; [
     pkg-config
     neovim
+    wl-clipboard
   # BUILD TOOLS & VERSION CONTROL
     cmake
     gnumake
