@@ -36,6 +36,15 @@
     pulse.enable = true;
   };
 
+  # Install Steam
+  programs.steam.enable = true;
+
+  # Install firefox
+  programs.firefox.enable = true;
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.redacted = {
     isNormalUser = true;
@@ -54,15 +63,6 @@
       obsidian
       ];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
-  # Install Steam
-  programs.steam.enable = true;
-
-  # Install firefox
-  programs.firefox.enable = true;
 
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
