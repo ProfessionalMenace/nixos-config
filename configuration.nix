@@ -19,12 +19,8 @@
   # Set your time zone.
   time.timeZone = "Europe/Prague";
 
-  # XSERVER
-  services.xserver.enable = true;
-  services.xserver.xkb.layout = "us";
-  services.xserver.xkb.variant = "";
-
   services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Enable sound with pipewire.
