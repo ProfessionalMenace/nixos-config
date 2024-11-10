@@ -19,10 +19,11 @@
   # Set your time zone.
   time.timeZone = "Europe/Prague";
 
-  # DESKTOP ENVIROMENT & WINDOW MANAGER
+  # XSERVER
   services.xserver.enable = true;
   services.xserver.xkb.layout = "us";
   services.xserver.xkb.variant = "";
+
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
@@ -36,14 +37,20 @@
     pulse.enable = true;
   };
 
-  # Install Steam
-  programs.steam.enable = true;
+  # Install Hyprland
+  programs.river.enable = true;
+
+  # Install Waybar
+  programs.waybar.enable = true;
 
   # Install firefox
   programs.firefox.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
+
+  # Install Steam
+  programs.steam.enable = true;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.redacted = {
