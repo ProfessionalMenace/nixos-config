@@ -25,9 +25,6 @@
   services.xserver.xkb.variant = "";
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
