@@ -61,9 +61,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Install Flatpak
-  services.flatpak.enable = true;
-
   # Install Steam
   programs.steam.enable = true;
 
