@@ -63,6 +63,10 @@
   # Install Steam
   programs.steam.enable = true;
 
+  fonts.packages = with pkgs; [
+    nerdfonts
+  ];
+  
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.redacted = {
     isNormalUser = true;
