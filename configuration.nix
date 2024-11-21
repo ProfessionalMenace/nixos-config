@@ -77,7 +77,6 @@
       qbittorrent
       thunderbird
       ldtk
-      vscodium
       obsidian
       ];
   };
