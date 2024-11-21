@@ -86,6 +86,7 @@
     pkg-config
     neovim
     wl-clipboard
+    htop
   # BUILD TOOLS & VERSION CONTROL
     cmake
     gnumake
