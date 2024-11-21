@@ -19,10 +19,6 @@
   # Set your time zone.
   time.timeZone = "Europe/Prague";
 
-  services.displayManager.sddm.enable = true;
-  services.displayManager.sddm.wayland.enable = true;
-  services.desktopManager.plasma6.enable = true;
-
   i18n = {
     defaultLocale = "en_US.UTF-8";
     extraLocaleSettings = {
@@ -48,8 +44,27 @@
     pulse.enable = true;
   };
 
-  # Install Hyprland
-  programs.river.enable = true;
+  services.dbus.enable = true;
+  security.polkit.enable = true;
+  services.gnome.gnome-keyring.enable = true;
+  xdg.portal = {
+    enable = true;
+    wlr.enable = true;
+    extraPortals = [
+      pkgs.xdg-desktop-portal-gtk
+    ];
+  };
+
+  # Install River
+  programs.river = {
+    enable = true;
+    extraPackages = with pkgs; [ 
+      foot
+      rofi-wayland
+      grim
+      slurp
+    ];
+  };
 
   # Install Waybar
   programs.waybar.enable = true;
