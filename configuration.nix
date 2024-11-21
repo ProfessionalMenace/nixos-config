@@ -93,6 +93,7 @@
     git
   # LANGUAGES & COMPILERS
     clang
+    clang-tools
     gcc
     julia-bin
     lua
