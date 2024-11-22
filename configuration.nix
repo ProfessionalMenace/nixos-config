@@ -49,11 +49,12 @@
   services.gnome.gnome-keyring.enable = true;
   xdg.portal = {
     enable = true;
-    wlr.enable = true;
-    extraPortals = [
-      pkgs.xdg-desktop-portal-gtk
+    xdgOpenUsePortal = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gtk
     ];
-  };
+    config.common.default = "*";
+  }; 
 
   # Install River
   programs.river = {
@@ -66,7 +67,7 @@
     ];
   };
 
-  # Install Waybar
+  # WAYBAR
   programs.waybar.enable = true;
 
   # Install firefox
@@ -90,13 +91,13 @@
     packages = with pkgs; [
       aseprite
       discord
-      github-desktop
       keepassxc
       krita
       qbittorrent
       thunderbird
       ldtk
       obsidian
+      github-desktop
       fastfetch
       ];
   };
