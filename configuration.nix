@@ -113,13 +113,16 @@
     gnumake
     git
   # LANGUAGES & COMPILERS
+  # C
     clang
     clang-tools
     gcc
+    gdb
+    valgrind
+  # Other
     julia-bin
     lua
     rustup
-    valgrind
     zig
   ];
 
