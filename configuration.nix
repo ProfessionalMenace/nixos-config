@@ -10,13 +10,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Define your hostname.
+  # Networking
   networking.hostName = "redacted";
-
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
+  # Locales
   time.timeZone = "Europe/Prague";
 
   i18n = {
@@ -34,7 +32,7 @@
     };
   };
   
-  # Enable sound with pipewire.
+  # Audio
   hardware.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -108,25 +106,23 @@
     neovim
     wl-clipboard
     htop
-  # BUILD TOOLS & VERSION CONTROL
+  # Devel
     cmake
     gnumake
     git
-  # LANGUAGES & COMPILERS
+    julia-bin
+    lua
+    rustup
+    zig
   # C
     clang
     clang-tools
     gcc
     gdb
     valgrind
-  # Other
-    julia-bin
-    lua
-    rustup
-    zig
   ];
 
-  # Automatic nix-store --optimise
+  # Automatic tasks
   nix.optimise.automatic = true;
   nix.gc.automatic = true;
   system.autoUpgrade = {
