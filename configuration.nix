@@ -10,13 +10,11 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  # Define your hostname.
+  # Networking
   networking.hostName = "redacted";
-
-  # Enable networking
   networking.networkmanager.enable = true;
 
-  # Set your time zone.
+  # Locales
   time.timeZone = "Europe/Prague";
 
   i18n = {
@@ -43,32 +41,11 @@
     alsa.support32Bit = true;
     pulse.enable = true;
   };
-
-  services.dbus.enable = true;
-  security.polkit.enable = true;
-  services.gnome.gnome-keyring.enable = true;
-  xdg.portal = {
-    enable = true;
-    xdgOpenUsePortal = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-gtk
-    ];
-    config.common.default = "*";
-  }; 
-
-  # Install River
-  programs.river = {
-    enable = true;
-    extraPackages = with pkgs; [ 
-      foot
-      rofi-wayland
-      grim
-      slurp
-    ];
-  };
-
-  # WAYBAR
-  programs.waybar.enable = true;
+  
+  # Desktop environment
+  services.displayManager.sddm.enable = true;
+  services.displayManager.sddm.wayland.enable = true;
+  services.desktopManager.plasma6.enable = true;
 
   # Install firefox
   programs.firefox.enable = true;
@@ -78,10 +55,6 @@
 
   # Install Steam
   programs.steam.enable = true;
-
-  fonts.packages = with pkgs; [
-    nerdfonts
-  ];
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.redacted = {
@@ -89,13 +62,9 @@
     description = "REDACTED";
     extraGroups = [ "networkmanager" "wheel"];
     packages = with pkgs; [
-      aseprite
-      discord
       keepassxc
-      krita
       qbittorrent
       thunderbird
-      ldtk
       obsidian
       github-desktop
       fastfetch
@@ -123,14 +92,8 @@
     zig
   ];
 
-  # Automatic nix-store --optimise
+  # Automation
   nix.optimise.automatic = true;
   nix.gc.automatic = true;
-  system.autoUpgrade = {
-    enable = true;
-    allowReboot = true;
-    channel = https://nixos.org/channels/nixos-unstable;
-  };
-
   system.stateVersion = "24.05";
 }
