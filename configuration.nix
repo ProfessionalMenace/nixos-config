@@ -58,17 +58,18 @@
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.redacted = {
-    isNormalUser = true;
-    description = "REDACTED";
-    extraGroups = [ "networkmanager" "wheel"];
-    packages = with pkgs; [
-      keepassxc
-      qbittorrent
-      thunderbird
-      obsidian
-      github-desktop
-      fastfetch
-      ];
+  isNormalUser = true;
+  extraGroups = [ "networkmanager" "wheel"];
+  packages = with pkgs; [
+    github-desktop
+    imhex
+    keepassxc
+    thunderbird
+    obsidian
+    fastfetch
+    vesktop
+    vscodium
+    ];
   };
 
   # List packages installed in system profile.
@@ -81,16 +82,20 @@
     cmake
     gnumake
     git
-  # LANGUAGES & COMPILERS
+  # C and C++
     clang
     clang-tools
     gcc
+    gdb
+    valgrind
+  # Other
     julia-bin
     lua
+    R
     rustup
-    valgrind
     zig
   ];
+
 
   # Automation
   nix.optimise.automatic = true;
