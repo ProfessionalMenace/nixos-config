@@ -58,17 +58,17 @@
   
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.redacted = {
-  isNormalUser = true;
-  extraGroups = [ "networkmanager" "wheel"];
-  packages = with pkgs; [
-    github-desktop
-    imhex
-    keepassxc
-    thunderbird
-    obsidian
-    fastfetch
-    vesktop
-    vscodium
+    isNormalUser = true;
+    extraGroups = [ "networkmanager" "wheel"];
+    packages = with pkgs; [
+      github-desktop
+      imhex
+      keepassxc
+      thunderbird
+      obsidian
+      fastfetch
+      vesktop
+      vscodium
     ];
   };
 
@@ -89,13 +89,13 @@
     gdb
     valgrind
   # Other
+    ghc
     julia-bin
     lua
     R
     rustup
     zig
   ];
-
 
   # Automation
   nix.optimise.automatic = true;
