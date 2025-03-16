@@ -2,6 +2,9 @@
 {
   # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
+    foot
+    grim
+    slurp
     waybar
     polkit_gnome
     kitty
