@@ -1,14 +1,16 @@
 { pkgs, ...}:
 {
-  # List packages installed in system profile.
   environment.systemPackages = with pkgs; [
-    foot
+  # 1
+    ghostty
+    yazi
+    fastfetch
     grim
     slurp
     waybar
     polkit_gnome
-    kitty
     rofi-wayland
+  # 2
     pkg-config
     neovim
     wl-clipboard

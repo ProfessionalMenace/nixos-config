@@ -1,6 +1,6 @@
 { pkgs, ...}:
 {
-  users.users.REDACTED = {
+  users.users.adamv = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel"];
     packages = with pkgs; [
