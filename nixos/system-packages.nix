@@ -1,38 +1,24 @@
 { pkgs, ...}:
 {
   environment.systemPackages = with pkgs; [
-  # 1
-    ghostty
-    yazi
+    kdePackages.dolphin
     fastfetch
-    grim
-    slurp
-    waybar
-    polkit_gnome
-    rofi-wayland
-  # 2
     pkg-config
     neovim
-    wl-clipboard
     htop
   # BUILD TOOLS & VERSION CONTROL
     cmake
     gnumake
     git
-    meson
     ninja
-  # C and C++
+  # C/C++ Toolchain
     clang
     clang-tools
-    gcc
+    lldb
     gdb
     valgrind
-  # Other
-    ghc
-    julia-bin
-    lua
-    R
+  # Rust & Zig
     rustup
     zig
-  ];
+ ];
 }

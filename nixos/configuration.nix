@@ -10,6 +10,7 @@
       ./hardware-configuration.nix
       ./system-packages.nix
       ./user-packages.nix
+      ./sway.nix
     ];
 
   # Bootloader.
@@ -48,44 +49,14 @@
     pulse.enable = true;
   };
 
-  # XDG Portals
-  xdg = {
-    autostart.enable = true;
-    portal = {
-      enable = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal
-        pkgs.xdg-desktop-portal-gtk
-      ];
-    };
-  };
-
-  services.gnome.gnome-keyring.enable = true;
-  services.greetd = {
-    enable = true;
-    settings = rec {
-    initial_session = {
-      command = "${pkgs.greetd.tuigreet}/bin/tuigreet --time --cmd river";
-      user = "adamv";
-      };
-    default_session = initial_session;
-    };
-  };
-
   fonts.packages = with pkgs; [
     fira-code
     fira-code-symbols
   ];
 
   services.dbus.enable = true;
-
-  # River
-  programs.river.enable = true;
-
-  # Install Steam
+  services.flatpak.enable = true;
   programs.steam.enable = true;
-
-  # Install firefox
   programs.firefox.enable = true;
 
   # Allow unfree packages
@@ -94,5 +65,5 @@
   # Automatic nix-store --optimise
   nix.optimise.automatic = true;
   nix.gc.automatic = true;
-  system.stateVersion = "24.05";
+  system.stateVersion = "25.05";
 }

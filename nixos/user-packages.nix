@@ -1,17 +1,20 @@
 { pkgs, ...}:
 {
-  users.users.adamv = {
+  users.users.REDACTED = {
     isNormalUser = true;
     extraGroups = [ "networkmanager" "wheel"];
     packages = with pkgs; [
+      gimp3
       github-desktop
-      imhex
-      keepassxc
-      thunderbird
-      obsidian
       fastfetch
+      keepassxc
+      lean4
+      thunderbird
+      typst
+      tinymist
+      olympus
       vesktop
       vscodium
-      ];
+    ];
   };
 }
