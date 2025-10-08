@@ -1,6 +1,0 @@
-SOURCE="/etc/nixos"
-DESTINATION="./nixos/"
-cp "$SOURCE/configuration.nix"   "$DESTINATION"
-cp "$SOURCE/system-packages.nix" "$DESTINATION"
-cp "$SOURCE/user-packages.nix"   "$DESTINATION"
-echo "COPY FROM $SOURCE TO $DESTINATION"
