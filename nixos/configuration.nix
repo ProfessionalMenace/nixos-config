@@ -7,7 +7,6 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./system-packages.nix
       ./user-packages.nix
     ];
 
@@ -117,6 +116,7 @@
 
   # Automatic nix-store --optimise
   nix.optimise.automatic = true;
+
   # nix.gc.automatic = true;
   system.stateVersion = "25.11";
 }
