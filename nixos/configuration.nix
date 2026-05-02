@@ -12,7 +12,7 @@
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-  # Bootloader.
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
@@ -49,6 +49,7 @@
     pulse.enable = true;
   };
 
+  # fonts
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
   ];
@@ -110,6 +111,9 @@
       rofi
     ];
   };
+
+  # bit sus but okay
+  environment.variables.EDITOR = "nvim";
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

@@ -6,20 +6,19 @@
     packages = with pkgs; [
       gimp3
       git
-      fastfetch
       keepassxc
       thunderbird
-      olympus
+      olympus # celeste
       unzip
       vesktop
       vscodium
-      kdePackages.okular
-      zathura
+      kdePackages.okular # document viewer
+      zathura # document viewer
 
       neovim
-      nixd
-      elan # awful 
-      texliveMedium
+      nixd # nix language server
+      elan # lean version manager
+      texliveMedium # tex packages
     ];
   };
 }
